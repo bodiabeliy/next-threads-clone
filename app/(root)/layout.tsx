@@ -1,6 +1,11 @@
+import TopBar from '@/components/widgets/TopBar/TopBar'
 import '../globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import LeftBar from '@/components/widgets/LeftBar/LeftBar'
+import RightBar from '@/components/widgets/RightBar/RightBar'
+import BottomBar from '@/components/widgets/BottomBar/BottomBar'
+import { ClerkProvider } from '@clerk/nextjs'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,8 +20,25 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <ClerkProvider>
+       <html lang="en">
+      <body className={inter.className}>
+      <TopBar />
+        <main>
+          <LeftBar />
+          <section className='main-container'>
+            <div className="w-full max-w-4xl">
+              {children}
+            </div>
+          </section>
+          <RightBar />
+        </main>
+        <BottomBar />
+
+      </body>
+
     </html>
+    </ClerkProvider>
+
   )
 }
