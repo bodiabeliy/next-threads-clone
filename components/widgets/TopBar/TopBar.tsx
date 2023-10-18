@@ -5,7 +5,6 @@ import LogoutImage from "@/public/logout.png"
 
 import { OrganizationSwitcher, SignOutButton, SignedIn } from "@clerk/nextjs";
 const TopBar = () => {
-    const isSignUp = true
     return ( 
     <>
     <nav className="topbar">
@@ -24,13 +23,19 @@ const TopBar = () => {
         <div className="flex items-center gap-1">
             <div className="block md:hidden"> 
                 <div className="flex cursor-pointer"> 
-                    <Image 
-                        image={LogoutImage}
-                        altText="logout"
-                        width={24} 
-                        height={24} 
-                        descriprionText="Log out"
-                    />
+                    <SignedIn>
+                        <SignOutButton>
+                            <div className="flex cursor-pointer gap-4 p-4">
+                                <Image 
+                                    image={LogoutImage}
+                                    altText="logout"
+                                    width={24} 
+                                    height={24} 
+                                    descriprionText="Log out"
+                                />
+                            </div>
+                        </SignOutButton>
+                    </SignedIn>
                 </div>         
               
             </div>
