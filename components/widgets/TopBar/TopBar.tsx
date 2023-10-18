@@ -1,7 +1,7 @@
 import Link from "@/components/shared/Link/Link";
 import Image from "@/components/shared/Image/Image"
 import Logo from "@/public/logo-2.png"
-import LogoutImage from "@/public/logout.png"
+import LogoutImage from "@/public/assets/logout.svg"
 
 import { OrganizationSwitcher, SignOutButton, SignedIn } from "@clerk/nextjs";
 const TopBar = () => {
@@ -12,10 +12,9 @@ const TopBar = () => {
         data={
         <Image 
             image={Logo} 
-            width={30} 
-            height={30} 
+            width={50} 
+            height={50} 
             altText={"Threads Clone"} 
-            imageClassName={""} 
             descriptionClassName={"text-heading3-bold text-light-1 max-xs:hidden"} 
             descriprionText="Threads Clone"
         />} 

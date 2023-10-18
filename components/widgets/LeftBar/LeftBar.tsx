@@ -5,7 +5,7 @@ import LeftBarLinkItem from "../LeftBarLinkItem/LeftBarLinkItem";
 import { SignOutButton, SignedIn } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 
-import LogoutImage from "@/public/logout.png"
+import LogoutImage from "@/public/assets/logout.svg"
 
 
 const LeftBar = () => {

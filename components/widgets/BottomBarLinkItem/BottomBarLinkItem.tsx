@@ -11,7 +11,7 @@ interface LeftBarLinkProps {
     route:string
 }
 
-export const LeftBarLinkItem:FC<LeftBarLinkProps> = (props) => {
+export const BottomBarLinkItem:FC<LeftBarLinkProps> = (props) => {
     const {imgURL, label, route} = props
 
     // const router = useRouter()
@@ -19,14 +19,14 @@ export const LeftBarLinkItem:FC<LeftBarLinkProps> = (props) => {
     const isActive = (pathname.includes(route) && route.length >1 || pathname == route)
     return ( 
         <div>
-            <Link className={`leftsidebar_link ${isActive && "bg-primary-500"}`} href={route} data={
+            <Link className={`bottombar_link ${isActive && "bg-primary-500"} flex flex-col items-center`} href={route} data={
                 <>
                 <Image 
                     image={imgURL} 
                     width={25} 
                     height={25}
                     altText={label} 
-                    descriptionClassName="text-light-1 max-lg:hidden ml-3"
+                    descriptionClassName="text-light-1 max-sm:hidden"
                     descriprionText={label}
                     />
                 </>
@@ -35,4 +35,4 @@ export const LeftBarLinkItem:FC<LeftBarLinkProps> = (props) => {
      );
 }
  
-export default LeftBarLinkItem;
+export default BottomBarLinkItem;

@@ -26,7 +26,7 @@ export const LeftBarLinkItem:FC<LeftBarLinkProps> = (props) => {
                     width={25} 
                     height={25}
                     altText={label} 
-                    descriptionClassName="text-light-1 max-lg:hidden ml-3"
+                    descriptionClassName="text-light-1 max-md:hidden ml-3"
                     descriprionText={label}
                     />
                 </>
